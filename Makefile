@@ -5,7 +5,7 @@ CXX        = clang++
 CXXFLAGS   = -Wall  -std=c++17
 DEPFLAGS   = -MMD
 LDFLAGS    =
-SRCS       = adresse.cpp main.cpp date.cpp client.cpp compte.cpp
+SRCS       = main.cpp date.cpp
 OBJS       = $(SRCS:.cpp=.o)
 TARGET     = app
 DEPS	   = $(OBJS:.o=.d)
