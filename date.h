@@ -28,6 +28,7 @@ private:
 	int _day;
 	int _year;
 };
+void read_date(Date d);
 int dayOfYear(Date d);
 bool isdate(int month, int day);
 int getDaysInMonth(int month);
@@ -37,4 +38,5 @@ void back(Date &d);
 Date operator + (const int days, const Date& d);
 std::ostream& operator << (std::ostream& os, const Date& d);
 #endif
+
 

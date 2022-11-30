@@ -173,3 +173,6 @@ Date Date::operator --() {
 std::string toString(Date d) {
     return std::to_string(d.day()) + "/" + std::to_string(d.month()) ;
 }
+void read_date(Date d){
+    std::cout<<  d.day()  << "/" << d.month() <<"/"<< d.year() << std::endl;
+}   
