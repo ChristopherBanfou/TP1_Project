@@ -37,5 +37,4 @@ Auteur::Auteur(){
 		std::cout<< a.get_prenom()<< " ";
 		std::cout<< a.get_nom()<<" ,";
 		std::cout<< "Date de naissance : ";
-		read_date(a.get_date_de_naissance());
 	}
