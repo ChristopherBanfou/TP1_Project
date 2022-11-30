@@ -1,0 +1,41 @@
+#include <iostream>
+#include "Auteur.h"
+
+Auteur::Auteur(std::string id_numerique, std::string nom, std::string prenom, Date date_de_naissance){
+	_id_numerique=id_numerique;
+	_nom=nom;
+	_prenom=prenom;
+	_date_de_naissance=date_de_naissance;
+}
+Auteur::Auteur(){
+	_id_numerique="null";
+	_nom="null";
+	_prenom="null";
+	Date _date_de_naissance(1, 1, 1);
+
+}
+
+	std::string Auteur::get_id_numerique() const{
+		return _id_numerique;
+	}
+
+	std::string Auteur::get_nom() const{
+		return _nom;
+	}
+
+	std::string Auteur::get_prenom() const{
+		return _prenom;
+	}
+
+	Date Auteur::get_date_de_naissance() const{
+		return _date_de_naissance;
+	}
+
+	void read_auteur(Auteur a){
+		std::cout<<"Informations de l'auteur : ";
+		std::cout<< "Noms et prenoms : ";
+		std::cout<< a.get_prenom()<< " ";
+		std::cout<< a.get_nom()<<" ,";
+		std::cout<< "Date de naissance : ";
+		read_date(a.get_date_de_naissance());
+	}
