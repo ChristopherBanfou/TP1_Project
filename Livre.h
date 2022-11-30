@@ -25,4 +25,3 @@ private:
 	std::string _ISBN;
 	std::vector<std::string> _liste;
 };
-void read_livre(Livre L);
