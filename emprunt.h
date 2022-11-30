@@ -10,7 +10,5 @@ class Emprunt{
     std::string getId() const;
     std::string getISBN() const;
     void uploadId(std::string id);
-    void uploadISBN(std::string ISBN);
-
-    
+    void uploadISBN(std::string ISBN);  
 };

@@ -29,8 +29,9 @@ Lecteur::Lecteur(){
 
 	void read_lecteur(Lecteur L){
 		std::cout<<"Informations du lecteur : ";
+		std::cout<< "Identifiant : ";
+		std::cout<<L.get_id(); << " ,";
 		std::cout<< "Noms et prenoms : ";
-		std::cout<< a.get_prenom()<< " ";
-		std::cout<< a.get_nom()<<" ,";
-		std::cout<< "Date de naissance : ";
-		read_date(a.get_date_de_naissance());
+		std::cout<< L.get_prenom()<< " ";
+		std::cout<< L.get_nom()<<" ,";
+}
