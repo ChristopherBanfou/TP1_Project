@@ -11,5 +11,4 @@ Lecteur::Lecteur(){
 	_id="null";
 	_nom="null";
 	_prenom="null";
-	s
 }
