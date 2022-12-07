@@ -10,6 +10,7 @@
 	_date_de_publication=date_de_publication;
 	_ISBN=ISBN;
 	_liste=liste;
+	_status = false;
  }
 	std::string  Livre::get_titre() const{
 	 	return _titre;
@@ -36,5 +37,8 @@
 
 	 	Livre::get_liste().push_back(id);
 
+	 }
+	 void Livre::update_status(bool status){
+		_status = status;
 	 }
 

@@ -15,6 +15,7 @@ public:
 	 std::string get_ISBN() const;
 	 std::vector<std::string> get_liste() const;
 	 void update_liste(std::string id);
+	 void update_status(bool status);
 	
 private:
 	std::string _titre;
@@ -24,5 +25,6 @@ private:
 	Date _date_de_publication;
 	std::string _ISBN;
 	std::vector<std::string> _liste;
+	bool _status;
 };
 void read_livre(Livre L);
