@@ -2,6 +2,8 @@
 #include "Livre.h"
 #include "date.h"
 #include "emprunt.h"
+#include "Lecteur.h"
+
 int main(int argc, char const *argv[])
 {
 	Date d(3,2,1977);
@@ -18,6 +20,6 @@ int main(int argc, char const *argv[])
 	L.update_liste("Isco");
 	Emprunt E(d1, L, Lec);
 	read_livre(L);
-	read_lecteur(Lec);
+	std::cout << Lec;
 	return 0;
 }
