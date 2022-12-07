@@ -16,6 +16,7 @@ int main(int argc, char const *argv[])
 	std::vector<std::string> liste_Lec2;
 
 	Auteur a("7", "Ronaldo", "Cristiano", d);
+	std::cout << std::endl << a;
 
 	Lecteur Lec1("7", "Rayane", "Mouazer", liste_Lec1);
 	Lecteur Lec2("723", "Christopher", "Babana", liste_Lec2);
@@ -28,6 +29,7 @@ int main(int argc, char const *argv[])
 	Emprunt E1(d1, L, Lec1);
 
 	read_livre(L);
+	std::cout << L;
 	std::cout << Lec1;
 	return 0;
 }

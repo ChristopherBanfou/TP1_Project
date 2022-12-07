@@ -58,4 +58,16 @@ bool Livre::get_status() const{
 void Livre::update_status(bool status){
 	_status = status;
 }
+std::ostream& operator << (std::ostream& os, Livre& L){
+	std::string to_display = "Titre : " + L.get_titre() + "\n langue : " + L.get_langue() + "\n Genre : " + L.get_genre() + "\n ISBN : " + L.get_ISBN();
+	to_display = to_display + " \n Liste des identifiants des emprunteurs : ";
+		for (int i = 0; i < L.get_liste().size(); ++i)
+	{
+		to_display = to_display + L.get_liste().at(i) + " , ";
+	}
+	to_display = to_display + "\n Date de punlication : ";
+	os << to_display << L.get_date_de_publication() << std::endl << L.get_auteur() << std::endl;
+	return os;
+
+}
 

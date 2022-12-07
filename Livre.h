@@ -30,3 +30,4 @@ private:
 	bool _status;
 };
 void read_livre(Livre L);
+std::ostream& operator << (std::ostream& os, Livre& L);
