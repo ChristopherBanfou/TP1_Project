@@ -18,6 +18,8 @@ public:
 	 void update_liste(std::string id);
 	 void update_status(bool status);
 	 bool get_status() const;
+	bool operator == (const Livre& L) const;
+	bool operator != (const Livre& L) const;
 	
 private:
 	std::string _titre;

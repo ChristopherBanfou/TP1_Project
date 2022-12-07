@@ -52,6 +52,15 @@ std::ostream& operator << (std::ostream& os, Livre& L){
 	to_display = to_display + "\n Date de punlication : ";
 	os << to_display << L.get_date_de_publication() << std::endl << L.get_auteur() << std::endl;
 	return os;
-
 }
+bool Livre::operator == (const Livre& L) const{
+	if(L.get_auteur() == _auteur && L.get_date_de_publication() == _date_de_publication && L.get_genre() == _genre && L.get_ISBN() == _ISBN && L.get_langue() == _langue && L.get_liste() == _liste && L.get_status() == _status && L.get_titre()==_titre){
+		return true;
+	}
+	return false;
+
+	}
+bool Livre::operator != (const Livre& L) const{
+		
+	}
 

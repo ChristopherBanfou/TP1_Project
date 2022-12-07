@@ -22,5 +22,4 @@ private:
 	std::string _prenom;
 	std::vector<std::string> _liste;	
 };
-void read_lecteur(Lecteur L);
 std::ostream& operator << (std::ostream& os, Lecteur& L);
