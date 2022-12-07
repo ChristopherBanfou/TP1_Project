@@ -6,15 +6,11 @@
 #include "assert.h"
 
 Emprunt::Emprunt(Date date, Livre& Livre, Lecteur& Lecteur) : _date(date), _ISBN(Livre.get_ISBN()), _id(Lecteur.get_id()){
+    bool status = Livre.get_status();
+    assert(status && "Livre indisponible");
     Livre.update_liste(Lecteur.get_id());
     Livre.update_status(false);
-    if (Livre.get_status()){
-        std::cout << "Livre non disponible \n"; 
-    }
     Lecteur.update_liste(Livre.get_ISBN());
-    bool status = Livre.get_status();
-    Lecteur.update_liste(Livre.get_ISBN());
-    assert(status && "Livre indisponible");
 }
 std::string Emprunt::getId() const{
     return _id;
