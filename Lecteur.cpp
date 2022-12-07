@@ -11,7 +11,6 @@ Lecteur::Lecteur(){
 	_id="null";
 	_nom="null";
 	_prenom="null";
-	_liste=std::vector<std::string> v;
 }
 
 	std::string Lecteur::get_id(){
@@ -20,17 +19,17 @@ Lecteur::Lecteur(){
 	std::string Lecteur::get_nom(){
 		return _nom;
 	}
-	std::string get_prenom(){
+	std::string Lecteur::get_prenom(){
 		return _prenom;
 	}
-	std::vector<std::string> get_liste(){
-		return _litse;
+	std::vector<std::string> Lecteur::get_liste(){
+		return _liste;
 	}
 
 	void read_lecteur(Lecteur L){
 		std::cout<<"Informations du lecteur : ";
 		std::cout<< "Identifiant : ";
-		std::cout<<L.get_id(); << " ,";
+		std::cout<< L.get_id() << " ,";
 		std::cout<< "Noms et prenoms : ";
 		std::cout<< L.get_prenom()<< " ";
 		std::cout<< L.get_nom()<<" ,";
