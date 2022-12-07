@@ -17,6 +17,7 @@ public:
 	 std::vector<std::string> get_liste() const;
 	 void update_liste(std::string id);
 	 void update_status(bool status);
+	 bool get_status() const;
 	
 private:
 	std::string _titre;

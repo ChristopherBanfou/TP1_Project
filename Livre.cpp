@@ -10,7 +10,7 @@
 	_date_de_publication=date_de_publication;
 	_ISBN=ISBN;
 	_liste=liste;
-	_status = false;
+	_status = true;
  }
 	std::string  Livre::get_titre() const{
 	 	return _titre;
@@ -50,5 +50,11 @@ void read_livre(Livre L){
 		std::cout<< L.get_liste().at(i) << ", ";
 	}
 	std::cout<<" "<<std::endl;
+}
+bool Livre::get_status() const{
+	return _status;
+}
+void Livre::update_status(bool status){
+	_status = status;
 }
 

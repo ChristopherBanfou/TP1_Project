@@ -6,6 +6,10 @@
 
 Emprunt::Emprunt(Date date, Livre& Livre, Lecteur Lecteur) : _date(date), _ISBN(Livre.get_ISBN()), _id(Lecteur.get_id()){
     Livre.update_liste(Lecteur.get_id());
+    Livre.update_status(false);
+    if (Livre.get_status()){
+        std::cout << "Livre non disponible \n"; 
+    }
 }
 std::string Emprunt::getId() const{
     return _id;
