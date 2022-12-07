@@ -10,6 +10,7 @@
 	_date_de_publication=date_de_publication;
 	_ISBN=ISBN;
 	_liste=liste;
+	_status = false;
  }
 	std::string  Livre::get_titre() const{
 	 	return _titre;
@@ -50,4 +51,3 @@ void read_livre(Livre L){
 	}
 	std::cout<<" "<<std::endl;
 
-}
