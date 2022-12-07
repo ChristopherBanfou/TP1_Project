@@ -50,6 +50,7 @@ void read_livre(Livre L){
 		std::cout<< L.get_liste().at(i) << ", ";
 	}
 	std::cout<<" "<<std::endl;
+	std::cout<<" "<<std::endl;
 }
 bool Livre::get_status() const{
 	return _status;

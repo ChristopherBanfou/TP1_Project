@@ -18,5 +18,6 @@ int main(int argc, char const *argv[])
 	L.update_liste("Isco");
 	Emprunt E(d1, L, Lec);
 	read_livre(L);
+	read_lecteur(Lec);
 	return 0;
 }
