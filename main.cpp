@@ -26,7 +26,6 @@ int main(int argc, char const *argv[])
 
 	L.update_liste("Isco");
 	Emprunt E1(d1, L, Lec1);
-	Emprunt E2(d1, L, Lec2);
 
 	read_livre(L);
 	std::cout << Lec1;
