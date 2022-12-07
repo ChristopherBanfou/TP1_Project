@@ -12,6 +12,9 @@ public:
 	std::string get_prenom() const;
 	std::vector<std::string> get_liste() const;
 	void update_liste(std::string ISBN);
+	bool operator == (const Lecteur& L) const;
+	bool operator != (const Lecteur& L) const;
+	
 
 private:
 	std::string _id;

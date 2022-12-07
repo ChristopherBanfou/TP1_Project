@@ -53,4 +53,15 @@ std::ostream& operator << (std::ostream& os,  Lecteur& L){
 	}
 	os << to_display << std::endl;
 	return os;
-} 
+}
+	bool Lecteur::operator == (const Lecteur& L) const{
+		if(L.get_id() == _id && L.get_liste() == _liste && L.get_nom() == _nom && L.get_prenom() == _prenom){
+			return true;
+		}
+		return false;
+
+	}
+	bool Lecteur::operator != (const Lecteur& a) const{
+		return !(a == *this);
+
+	}
