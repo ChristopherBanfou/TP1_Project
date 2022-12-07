@@ -64,3 +64,32 @@ void read_biblio(Bibliotheque B){
 	std::cout<<" "<<std::endl;
 	std::cout<<" "<<std::endl;
 }
+std::ostream& operator << (std::ostream& os, const Bibliotheque& B){
+	std::string to_display = "Informations de la Bibliotheque : \n Liste ds auteurs : ";
+		for (int i = 0; i < B.get_auteur().size(); ++i)
+	{
+		to_display = to_display + B.get_auteur().at(i).get_prenom() + " " + B.get_auteur().at(i).get_nom() + ", ";
+	}
+	to_display = to_display + "\n Liste des livres [ Livre(ISBN) ] : ";
+		for (int i = 0; i < B.get_livre().size(); ++i)
+	{
+		to_display = to_display + B.get_livre().at(i).get_titre() + "(" + B.get_livre().at(i).get_ISBN() +  ")" + ",  ";
+	}
+
+	to_display = to_display + "\n Liste des lecteurs [ Lecteur(ID) ] : ";
+		for (int i = 0; i < B.get_lecteur().size(); ++i)
+	{
+		to_display = to_display + B.get_lecteur().at(i).get_prenom() + " " + B.get_lecteur().at(i).get_nom() + "(" + B.get_lecteur().at(i).get_id() + ")" + ",  ";
+	}
+
+	to_display = to_display + "\n Liste des emprunts [ ISBN_Livre - ID_Lecteur ] : ";
+		for (int i = 0; i < B.get_emprunt().size(); ++i)
+	{
+		to_display = to_display + B.get_emprunt().at(i).get_ISBN() + " - " + B.get_emprunt().at(i).get_id() + ",  ";
+	}
+	os << to_display << std::endl;
+	return os;
+
+
+
+}

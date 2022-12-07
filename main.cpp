@@ -89,5 +89,6 @@ int main(int argc, char const *argv[])
 	B.update_emprunt(E3);
 
 	read_biblio(B);
+	std::cout << std::endl << B;
 	return 0;
 }
