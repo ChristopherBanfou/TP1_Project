@@ -3,17 +3,14 @@
 #include "Livre.h"
 #include "Lecteur.h"
 #include "date.h"
+#include "assert.h"
 
 Emprunt::Emprunt(Date date, Livre& Livre, Lecteur& Lecteur) : _date(date), _ISBN(Livre.get_ISBN()), _id(Lecteur.get_id()){
     Livre.update_liste(Lecteur.get_id());
-<<<<<<< HEAD
     Livre.update_status(false);
-    if (Livre.get_status()){
-        std::cout << "Livre non disponible \n"; 
-    }
-=======
+    bool status = Livre.get_status();
     Lecteur.update_liste(Livre.get_ISBN());
->>>>>>> a0d17effd5566b36559247ad178ede44bc23ff32
+    assert(status && "Livre indisponible");
 }
 std::string Emprunt::getId() const{
     return _id;
