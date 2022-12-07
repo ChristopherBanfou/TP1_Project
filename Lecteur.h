@@ -11,6 +11,7 @@ public:
 	std::string get_nom();
 	std::string get_prenom();
 	std::vector<std::string> get_liste();
+	void update_liste(std::string ISBN);
 
 private:
 	std::string _id;

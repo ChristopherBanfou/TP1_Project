@@ -25,12 +25,22 @@ Lecteur::Lecteur(){
 	std::vector<std::string> Lecteur::get_liste(){
 		return _liste;
 	}
+	 void Lecteur::update_liste(std::string ISBN){
+	 	_liste.push_back(ISBN);
+	 }
 
 	void read_lecteur(Lecteur L){
 		std::cout<<"Informations du lecteur : ";
 		std::cout<< "Identifiant : ";
-		std::cout<< L.get_id() << " ,";
+		std::cout<< L.get_id() << std::endl;
 		std::cout<< "Noms et prenoms : ";
 		std::cout<< L.get_prenom()<< " ";
-		std::cout<< L.get_nom()<<" ,";
+		std::cout<< L.get_nom()<<std::endl;
+		std::cout<<"Liste des ISBN des livres empruntes :";
+	for (int i = 0; i < L.get_liste().size(); ++i)
+	{
+		std::cout<< L.get_liste().at(i) << ", ";
+	}
+	std::cout<<" "<<std::endl;
+	std::cout<<" "<<std::endl;
 }
