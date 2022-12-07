@@ -79,7 +79,7 @@ void back(Date &d){
 std::ostream& operator << (std::ostream& os, const Date& d){
 	std::string month [12] = {"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"};
 	std::string to_display = month[d.month() - 1] + "/" + std::to_string(d.day())+ "/" + std::to_string(d.year()) ;
-	os << to_display << std::endl;
+	os << to_display;
 	return os;
 }
 bool Date::operator == (const Date& d) const{

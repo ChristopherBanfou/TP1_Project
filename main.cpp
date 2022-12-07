@@ -3,7 +3,7 @@
 #include "date.h"
 #include "emprunt.h"
 #include "bibliotheque.h"
-
+#include "Lecteur.h"
 
 int main(int argc, char const *argv[])
 {
@@ -89,7 +89,5 @@ int main(int argc, char const *argv[])
 	B.update_emprunt(E3);
 
 	read_biblio(B);
-
-
 	return 0;
 }
