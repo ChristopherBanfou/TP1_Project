@@ -1,12 +1,15 @@
+#pragma once
 #include "date.h"
 #include <iostream>
+#include "Livre.h"
+#include "Lecteur.h"
 class Emprunt{
     private:
     Date _date;
     std::string _ISBN;
     std::string _id;
     public:
-    Emprunt(Date date, std::string ISBN, std::string id);
+    Emprunt(Date date, Livre Livre, Lecteur Lecteur);
     std::string getId() const;
     std::string getISBN() const;
     void uploadId(std::string id);

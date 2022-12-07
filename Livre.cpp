@@ -50,4 +50,5 @@ void read_livre(Livre L){
 		std::cout<< L.get_liste().at(i) << ", ";
 	}
 	std::cout<<" "<<std::endl;
+}
 

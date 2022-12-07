@@ -1,8 +1,10 @@
 #include "emprunt.h"
 #include "iostream"
+#include "Livre.h"
+#include "Lecteur.h"
+#include "date.h"
 
-Emprunt::Emprunt(Date date, std::string ISBN, std::string id) : _date(date), _ISBN(ISBN), _id(id){
-
+Emprunt::Emprunt(Date date, Livre Livre, Lecteur Lecteur) : _date(date), _ISBN(Livre.get_ISBN()), _id(Lecteur.get_id()){
 }
 std::string Emprunt::getId() const{
     return _id;
