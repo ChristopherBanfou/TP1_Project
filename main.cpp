@@ -23,12 +23,10 @@ int main(int argc, char const *argv[])
 
 	Livre L("Real Madrid" , a , "Espagnol" , "Football" ,d, "7777777" ,liste);
 
-	read_livre(L);
 
 	L.update_liste("Isco");
 	Emprunt E1(d1, L, Lec1);
 
-	read_livre(L);
 	std::cout << L;
 	std::cout << Lec1;
 	return 0;

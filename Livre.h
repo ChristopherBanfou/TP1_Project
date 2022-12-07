@@ -29,5 +29,4 @@ private:
 	std::vector<std::string> _liste;
 	bool _status;
 };
-void read_livre(Livre L);
 std::ostream& operator << (std::ostream& os, Livre& L);

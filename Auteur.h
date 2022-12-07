@@ -18,5 +18,4 @@ private:
 	std::string _prenom;
 	Date _date_de_naissance;
 };
-void read_auteur(Auteur a );
 std::ostream& operator << (std::ostream& os, const Auteur& a);

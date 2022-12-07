@@ -31,14 +31,6 @@ Auteur::Auteur(){
 		return _date_de_naissance;
 	}
 
-	void read_auteur(Auteur a){
-		std::cout<<"Informations de l'auteur : ";
-		std::cout<< "Noms et prenoms : ";
-		std::cout<< a.get_prenom()<< " ";
-		std::cout<< a.get_nom()<<" ,";
-		std::cout<< "Date de naissance : ";
-		read_date(a.get_date_de_naissance());
-	}
 std::ostream& operator << (std::ostream& os, const Auteur& a){
 	std::string to_display = "Informations de l'auteur :  \n Noms et prenoms : " + a.get_prenom() + " " + a.get_nom() + "\n Date de naissance :";
 	os << to_display << a.get_date_de_naissance() << std::endl;
