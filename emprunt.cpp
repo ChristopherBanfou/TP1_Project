@@ -12,10 +12,10 @@ Emprunt::Emprunt(Date date, Livre& Livre, Lecteur& Lecteur) : _date(date), _ISBN
     Livre.update_status(false);
     Lecteur.update_liste(Livre.get_ISBN());
 }
-std::string Emprunt::getId() const{
+std::string Emprunt::get_id() const{
     return _id;
 }
-std::string Emprunt::getISBN() const{
+std::string Emprunt::get_ISBN() const{
     return _ISBN;
 }
 void Emprunt::uploadId(std::string id){

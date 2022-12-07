@@ -10,8 +10,8 @@ class Emprunt{
     std::string _id;
     public:
     Emprunt(Date date, Livre& Livre, Lecteur& Lecteur);
-    std::string getId() const;
-    std::string getISBN() const;
+    std::string get_id() const;
+    std::string get_ISBN() const;
     void uploadId(std::string id);
     void uploadISBN(std::string ISBN);  
 };
