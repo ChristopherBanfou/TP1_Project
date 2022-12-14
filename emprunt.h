@@ -16,5 +16,7 @@ class Emprunt{
     void updateDate(Date d);
     void uploadId(std::string id);
     void uploadISBN(std::string ISBN);  
+	bool operator == (const Emprunt& e) const;
+	bool operator != (const Emprunt& e) const;
 };
 std::ostream& operator << (std::ostream& os, Emprunt& e);
