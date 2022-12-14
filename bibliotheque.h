@@ -18,7 +18,8 @@ public:
 	void update_lecteur(Lecteur Lec);
 	void update_emprunt(Emprunt E);
 	void update_auteur(Auteur A);
-
+	bool operator == (const Bibliotheque& e) const;
+	bool operator != (const Bibliotheque& e) const;
 private:
 std::vector<Auteur> _auteur;
 std::vector<Livre> _livre;

@@ -89,7 +89,15 @@ std::ostream& operator << (std::ostream& os, const Bibliotheque& B){
 	}
 	os << to_display << std::endl;
 	return os;
-
-
-
 }
+bool Bibliotheque::operator == (const Bibliotheque& e) const{
+		if(e.get_auteur()==_auteur && e.get_emprunt()==_emprunt && e.get_lecteur()==_lecteur && e.get_livre()==_livre){
+			return true;
+		}
+		return false;
+
+	}
+bool Bibliotheque::operator != (const Bibliotheque& a) const{
+		return !(a == *this);
+
+	}
