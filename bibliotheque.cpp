@@ -64,3 +64,62 @@ void read_biblio(Bibliotheque B){
 	std::cout<<" "<<std::endl;
 	std::cout<<" "<<std::endl;
 }
+void Bibliotheque::livre_auteur(Auteur A){
+	std::cout<<"Les livres [Livre(ISBN)] ecrits par"<<A.get_prenom() <<" "<<A.get_nom() <<" sont : "<<std::endl;
+	for (int i = 0; i < _livre.size(); i++)
+	{
+		if (_livre.at(i).get_auteur()==A)
+		{
+			std::cout<<"Livre "<<i<<" : "<<_livre.at(i).get_titre() <<"("<<_livre.at(i).get_ISBN()<< ")" <<std::endl;
+		}
+	}
+}
+
+void Bibliotheque::livre_emprunt(){
+	int a=1;
+	float moyenne=o;
+	int nb=0;
+	std::string ISBN_cible;
+	std::cout<<"Les livres [Livre(ISBN] empruntes sont : "<<std::endl;
+	for (int i = 0; i < _emprunt.size(); i++)
+	{
+		if (ISBN_cible != _emprunt.at(i).get_ISBN())
+		{
+			nb++;
+			for (int j = 0; j < _livre.size(); j++)
+			{
+				if ( _emprunt.at(i).get_ISBN()== _livre.at(j).get_ISBN() )
+				{
+				std::cout<<"Livre "<<a<<" : "<<_livre.at(j).get_titre() <<"("<<_livre.at(j).get_ISBN()<< ")" <<std::endl;
+				a++;
+				}
+			}
+			ISBN_cible=_emprunt.at(i).get_ISBN();	
+		}
+	}
+	moyenne= (nb/_livre.size())*100;
+	std::cout<<"Le pourcentage de livre emprunte est : " << moyenne <<std::endl;
+}
+
+void Bibliotheque::lecteur_emprunt(Lecteur L){
+	std::string  ISBN_cible="aaa";
+	std::cout<<"Les livres empruntes par"<<L.get_prenom()<<" "<<A.get_nom()<<" sont : "<<std::endl;
+	for (int i = 0; i < _emprunt.size(); i++)
+	{
+		if (_emprunt.at(i).get_id() == L.get_id())
+		{
+			if (_emprunt.at(i).get_ISBN!=ISBN_cible)
+			{
+				for (int j = 0; j < _livre.size(); j++)
+				{
+					if (_emprunt.at(i).get_ISBN()==_livre.at(j).get_ISBN())
+					{
+						std::cout<<_livre.at(j)<<std::endl;
+					}
+				}
+				ISBN_cible=_emprunt.at(i).get_ISBN();
+			}
+		}
+	}
+
+}

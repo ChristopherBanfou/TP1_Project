@@ -89,5 +89,9 @@ int main(int argc, char const *argv[])
 	B.update_emprunt(E3);
 
 	read_biblio(B);
+
+	B.livre_auteur(a1);
+	B.livre_emprunt();
+	B.lecteur_emprunt(Lec2);
 	return 0;
 }

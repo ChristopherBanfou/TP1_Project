@@ -18,6 +18,9 @@ public:
 	void update_lecteur(Lecteur Lec);
 	void update_emprunt(Emprunt E);
 	void update_auteur(Auteur A);
+	void livre_auteur(Auteur A);
+	void livre_emprunt();
+	void lecteur_emprunt(Lecteur L);
 
 private:
 std::vector<Auteur> _auteur;
