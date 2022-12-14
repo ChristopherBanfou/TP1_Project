@@ -53,6 +53,9 @@ int main(int argc, char const *argv[])
 
 
 	Emprunt E1(d5, L1, Lec1);
+	Emprunt E6(d5, L7, Lec1);
+	Emprunt E4(d5, L9, Lec3);
+	Emprunt E5(d5, L8, Lec3);
 	Emprunt E2(d6, L2, Lec2);
 	Emprunt E3(d6, L4, Lec3);
 
@@ -88,7 +91,11 @@ int main(int argc, char const *argv[])
 	B.update_emprunt(E2);
 	B.update_emprunt(E3);
 
-	read_biblio(B);
+
+	std::cout << std::endl << B;
+
+	std::cout << "\n \n" << Lec1 << "\n" << Lec2 << "\n" << Lec3 << "\n";
+	B.arrange();
 	std::cout << std::endl << B;
 	return 0;
 }
