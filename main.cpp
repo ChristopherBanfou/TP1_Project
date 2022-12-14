@@ -49,7 +49,7 @@ int main(int argc, char const *argv[])
 	Livre L9("Uncharted" , a1 , "English" , "Aventure" , d4, "0006430" ,liste9);
 	Livre L10("Amour de Dijon" , a2 , "Francais" , "Romance" , d4, "0000033" ,liste10);
 	Livre L11("Le soleil de minuit" , a1 , "Francais" , "Poesi" , d4, "0001111" ,liste11);
-	Livre L12("Algerie CDM" , a3 , "Arabe" , "Comedie" , d4, "0009839" ,liste12);
+	Livre L12("Algerie CDM" , a2 , "Arabe" , "Comedie" , d4, "0009839" ,liste12);
 
 
 	Emprunt E1(d5, L1, Lec1);
@@ -90,12 +90,24 @@ int main(int argc, char const *argv[])
 	B.update_emprunt(E1);
 	B.update_emprunt(E2);
 	B.update_emprunt(E3);
+	B.update_emprunt(E4);
+	B.update_emprunt(E5);
+	B.update_emprunt(E6);
 
+<<<<<<< HEAD
 
 	std::cout << std::endl << B;
 
 	std::cout << "\n \n" << Lec1 << "\n" << Lec2 << "\n" << Lec3 << "\n";
 	B.arrange();
 	std::cout << std::endl << B;
+=======
+	std::cout<<B;
+	std::cout<<""<<std::endl;
+
+	B.livre_auteur(a1);
+	B.livre_emprunt();
+	B.lecteur_emprunt(Lec2);
+>>>>>>> 0589133395856e6ae5714eeb0f42da942afdac88
 	return 0;
 }

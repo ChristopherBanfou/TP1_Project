@@ -18,6 +18,9 @@ public:
 	void update_lecteur(Lecteur Lec);
 	void update_emprunt(Emprunt E);
 	void update_auteur(Auteur A);
+	void livre_auteur(Auteur A);
+	void livre_emprunt();
+	void lecteur_emprunt(Lecteur L);
 	bool operator == (const Bibliotheque& e) const;
 	bool operator != (const Bibliotheque& e) const;
 	void arrange();
@@ -27,5 +30,4 @@ std::vector<Livre> _livre;
 std::vector<Lecteur> _lecteur;
 std::vector<Emprunt> _emprunt;	
 };
-void read_biblio(Bibliotheque B);
 std::ostream& operator << (std::ostream& os, const Bibliotheque& B);
