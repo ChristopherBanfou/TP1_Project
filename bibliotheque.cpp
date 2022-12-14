@@ -36,34 +36,6 @@ void Bibliotheque::update_emprunt(Emprunt E){
 	_emprunt.push_back(E);
 }
 
-void read_biblio(Bibliotheque B){
-	std::cout<<"Informations de la bibliotheque : "<<std::endl;
-	std::cout<<"Liste des auteurs : ";
-	for (int i = 0; i < B.get_auteur().size(); ++i)
-	{
-		std::cout<< B.get_auteur().at(i).get_prenom()<< " " << B.get_auteur().at(i).get_nom()<< ",  ";
-	}
-	std::cout<<" "<<std::endl;
-	std::cout<<"Liste des livres [ Livre(ISBN) ] : " ;
-	for (int i = 0; i < B.get_livre().size(); ++i)
-	{
-		std::cout<< B.get_livre().at(i).get_titre() <<"("<< B.get_livre().at(i).get_ISBN()<< ")" << ",  ";
-	}
-	std::cout<<" "<<std::endl;
-	std::cout<<"Liste des lecteurs [ Lecteur(ID) ] : ";
-	for (int i = 0; i < B.get_lecteur().size(); ++i)
-	{
-		std::cout<< B.get_lecteur().at(i).get_prenom()<< " " << B.get_lecteur().at(i).get_nom() <<"("<< B.get_lecteur().at(i).get_id()<< ")" << ",  ";
-	}
-	std::cout<<" "<<std::endl;
-	std::cout<<"Liste des emprunts [ ISBN_Livre - ID_Lecteur ] : ";
-	for (int i = 0; i < B.get_emprunt().size(); ++i)
-	{
-		std::cout<< B.get_emprunt().at(i).get_ISBN()<< " - " << B.get_emprunt().at(i).get_id()<< ",  ";
-	}
-	std::cout<<" "<<std::endl;
-	std::cout<<" "<<std::endl;
-}
 void Bibliotheque::livre_auteur(Auteur A){
 	std::cout<<"Les livres [Livre(ISBN)] ecrits par"<<A.get_prenom() <<" "<<A.get_nom() <<" sont : "<<std::endl;
 	for (int i = 0; i < _livre.size(); i++)
@@ -121,5 +93,31 @@ void Bibliotheque::lecteur_emprunt(Lecteur L){
 			}
 		}
 	}
+std::ostream& operator << (std::ostream& os, const Bibliotheque& B){
+	std::string to_display = "Informations de la Bibliotheque : \n Liste ds auteurs : ";
+		for (int i = 0; i < B.get_auteur().size(); ++i)
+	{
+		to_display = to_display + B.get_auteur().at(i).get_prenom() + " " + B.get_auteur().at(i).get_nom() + ", ";
+	}
+	to_display = to_display + "\n Liste des livres [ Livre(ISBN) ] : ";
+		for (int i = 0; i < B.get_livre().size(); ++i)
+	{
+		to_display = to_display + B.get_livre().at(i).get_titre() + "(" + B.get_livre().at(i).get_ISBN() +  ")" + ",  ";
+	}
+
+	to_display = to_display + "\n Liste des lecteurs [ Lecteur(ID) ] : ";
+		for (int i = 0; i < B.get_lecteur().size(); ++i)
+	{
+		to_display = to_display + B.get_lecteur().at(i).get_prenom() + " " + B.get_lecteur().at(i).get_nom() + "(" + B.get_lecteur().at(i).get_id() + ")" + ",  ";
+	}
+
+	to_display = to_display + "\n Liste des emprunts [ ISBN_Livre - ID_Lecteur ] : ";
+		for (int i = 0; i < B.get_emprunt().size(); ++i)
+	{
+		to_display = to_display + B.get_emprunt().at(i).get_ISBN() + " - " + B.get_emprunt().at(i).get_id() + ",  ";
+	}
+	os << to_display << std::endl;
+	return os;
+
 
 }

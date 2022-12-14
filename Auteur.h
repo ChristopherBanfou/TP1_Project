@@ -11,6 +11,8 @@ public:
 	std::string get_nom() const;
 	std::string get_prenom() const;
 	Date get_date_de_naissance() const;
+	bool operator == (const Auteur& a) const;
+	bool operator != (const Auteur& a) const;
 
 private:
 	std::string _id_numerique;

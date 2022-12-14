@@ -24,3 +24,12 @@ void Emprunt::uploadId(std::string id){
 void Emprunt::uploadISBN(std::string ISBN){
     _ISBN = ISBN;
 }
+Date Emprunt::get_Date() const{
+    return _date;
+}
+void Emprunt::updateDate(Date d){
+    _date = d;
+}
+std::ostream& operator << (std::ostream& os, Emprunt& e){
+    os << "Date d'emprunt : " << e.get_Date() << "\n ISBN : " << e.get_ISBN() << "\n id du Lecteur : " << e.get_id();
+}

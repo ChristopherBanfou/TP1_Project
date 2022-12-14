@@ -36,3 +36,15 @@ std::ostream& operator << (std::ostream& os, const Auteur& a){
 	os << to_display << a.get_date_de_naissance() << std::endl;
 	return os;
 }
+	bool Auteur::operator == (const Auteur& a) const{
+		if (a.get_date_de_naissance() == _date_de_naissance && a.get_id_numerique() == _id_numerique && a.get_nom() == _nom && a.get_prenom() == _prenom)
+		{
+			return true;
+
+		}
+		return false;
+
+	}
+	bool Auteur::operator != (const Auteur& a) const{
+		return !(*this == a);
+	}

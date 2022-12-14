@@ -88,7 +88,7 @@ int main(int argc, char const *argv[])
 	B.update_emprunt(E2);
 	B.update_emprunt(E3);
 
-	read_biblio(B);
+	std::cout<<B;
 
 	B.livre_auteur(a1);
 	B.livre_emprunt();
