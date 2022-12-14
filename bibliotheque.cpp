@@ -102,18 +102,5 @@ bool Bibliotheque::operator != (const Bibliotheque& a) const{
 
 	}
 void Bibliotheque::arrange(){
-	std::vector<int> number;
-	for (int i = 0; i < _lecteur.size(); i++){
-		for (auto n: number){
-			n = _lecteur.at(i).get_liste().size();
-		}		
-	}
-	std::sort(number.begin(), number.end());
-	for(int j = 0; j < number.size(); j++){
-		for(int i = 0; i < _lecteur.size(); i++){
-		if(_lecteur.at(i).get_liste().size()==number.at(j)){
-			_lecteur.at(j)=_lecteur.at(i);
-		}
-	}
-	}
+	std::sort(_lecteur.begin(),_lecteur.end());
 }
