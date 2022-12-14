@@ -94,20 +94,11 @@ int main(int argc, char const *argv[])
 	B.update_emprunt(E5);
 	B.update_emprunt(E6);
 
-<<<<<<< HEAD
 
 	std::cout << std::endl << B;
 
 	std::cout << "\n \n" << Lec1 << "\n" << Lec2 << "\n" << Lec3 << "\n";
 	B.arrange();
 	std::cout << std::endl << B;
-=======
-	std::cout<<B;
-	std::cout<<""<<std::endl;
-
-	B.livre_auteur(a1);
-	B.livre_emprunt();
-	B.lecteur_emprunt(Lec2);
->>>>>>> 0589133395856e6ae5714eeb0f42da942afdac88
 	return 0;
 }
