@@ -61,6 +61,6 @@ bool Livre::operator == (const Livre& L) const{
 
 	}
 bool Livre::operator != (const Livre& L) const{
-		
+		return !(*this==L);
 	}
 
