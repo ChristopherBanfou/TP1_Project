@@ -37,27 +37,30 @@ void Bibliotheque::update_emprunt(Emprunt E){
 }
 
 void Bibliotheque::livre_auteur(Auteur A){
-	std::cout<<"Les livres [Livre(ISBN)] ecrits par"<<A.get_prenom() <<" "<<A.get_nom() <<" sont : "<<std::endl;
+	int a=1;
+	std::cout<<"Les livres [Livre(ISBN)] ecrits par "<< A.get_prenom() <<" "<<A.get_nom() <<" sont : "<<std::endl;
 	for (int i = 0; i < _livre.size(); i++)
 	{
 		if (_livre.at(i).get_auteur()==A)
 		{
-			std::cout<<"Livre "<<i<<" : "<<_livre.at(i).get_titre() <<"("<<_livre.at(i).get_ISBN()<< ")" <<std::endl;
+			std::cout<<"Livre "<<a<<" : "<<_livre.at(i).get_titre() <<"("<<_livre.at(i).get_ISBN()<< ")" <<std::endl;
+			a++;
 		}
 	}
+	std::cout<<""<<std::endl;
 }
 
 void Bibliotheque::livre_emprunt(){
 	int a=1;
-	float moyenne=o;
-	int nb=0;
-	std::string ISBN_cible;
+	float moyenne=0;
+	float nb=0;
+	std::string ISBN_cible="1";
 	std::cout<<"Les livres [Livre(ISBN] empruntes sont : "<<std::endl;
 	for (int i = 0; i < _emprunt.size(); i++)
 	{
 		if (ISBN_cible != _emprunt.at(i).get_ISBN())
 		{
-			nb++;
+			nb=nb+1;
 			for (int j = 0; j < _livre.size(); j++)
 			{
 				if ( _emprunt.at(i).get_ISBN()== _livre.at(j).get_ISBN() )
@@ -69,32 +72,37 @@ void Bibliotheque::livre_emprunt(){
 			ISBN_cible=_emprunt.at(i).get_ISBN();	
 		}
 	}
-	moyenne= (nb/_livre.size())*100;
+	moyenne = ( nb/_livre.size() )*100;
 	std::cout<<"Le pourcentage de livre emprunte est : " << moyenne <<std::endl;
+	std::cout<<""<<std::endl;
 }
 
 void Bibliotheque::lecteur_emprunt(Lecteur L){
-	std::string  ISBN_cible="aaa";
-	std::cout<<"Les livres empruntes par"<<L.get_prenom()<<" "<<A.get_nom()<<" sont : "<<std::endl;
+	int a=1;
+	std::string  ISBN_cible="1";
+	std::cout<<"Les livres [Livre(ISBN)] empruntes par "<<L.get_prenom()<<" "<<L.get_nom()<<" sont : "<<std::endl;
 	for (int i = 0; i < _emprunt.size(); i++)
 	{
 		if (_emprunt.at(i).get_id() == L.get_id())
 		{
-			if (_emprunt.at(i).get_ISBN!=ISBN_cible)
+			if (_emprunt.at(i).get_ISBN()!=ISBN_cible)
 			{
 				for (int j = 0; j < _livre.size(); j++)
 				{
 					if (_emprunt.at(i).get_ISBN()==_livre.at(j).get_ISBN())
 					{
-						std::cout<<_livre.at(j)<<std::endl;
+						std::cout<<"Livre "<<a<<" : "<<_livre.at(j).get_titre() <<"("<<_livre.at(j).get_ISBN()<< ")" <<std::endl;
+				a++;
 					}
 				}
 				ISBN_cible=_emprunt.at(i).get_ISBN();
 			}
 		}
 	}
+	std::cout<<""<<std::endl;
+}
 std::ostream& operator << (std::ostream& os, const Bibliotheque& B){
-	std::string to_display = "Informations de la Bibliotheque : \n Liste ds auteurs : ";
+	std::string to_display = "Informations de la Bibliotheque : \n Liste des auteurs : ";
 		for (int i = 0; i < B.get_auteur().size(); ++i)
 	{
 		to_display = to_display + B.get_auteur().at(i).get_prenom() + " " + B.get_auteur().at(i).get_nom() + ", ";
@@ -118,6 +126,5 @@ std::ostream& operator << (std::ostream& os, const Bibliotheque& B){
 	}
 	os << to_display << std::endl;
 	return os;
-
-
 }
+

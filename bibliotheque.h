@@ -28,5 +28,4 @@ std::vector<Livre> _livre;
 std::vector<Lecteur> _lecteur;
 std::vector<Emprunt> _emprunt;	
 };
-void read_biblio(Bibliotheque B);
 std::ostream& operator << (std::ostream& os, const Bibliotheque& B);

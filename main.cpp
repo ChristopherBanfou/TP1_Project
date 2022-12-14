@@ -49,12 +49,16 @@ int main(int argc, char const *argv[])
 	Livre L9("Uncharted" , a1 , "English" , "Aventure" , d4, "0006430" ,liste9);
 	Livre L10("Amour de Dijon" , a2 , "Francais" , "Romance" , d4, "0000033" ,liste10);
 	Livre L11("Le soleil de minuit" , a1 , "Francais" , "Poesi" , d4, "0001111" ,liste11);
-	Livre L12("Algerie CDM" , a3 , "Arabe" , "Comedie" , d4, "0009839" ,liste12);
+	Livre L12("Algerie CDM" , a2 , "Arabe" , "Comedie" , d4, "0009839" ,liste12);
 
 
 	Emprunt E1(d5, L1, Lec1);
-	Emprunt E2(d6, L2, Lec2);
-	Emprunt E3(d6, L4, Lec3);
+	Emprunt E2(d6, L9, Lec2);
+	Emprunt E3(d6, L8, Lec2);
+	Emprunt E4(d6, L7, Lec2);
+	Emprunt E5(d6, L12, Lec2);
+	Emprunt E6(d6, L4, Lec3);
+
 
 	std::vector<Livre> livre;
 	std::vector<Lecteur> lecteur;
@@ -87,8 +91,12 @@ int main(int argc, char const *argv[])
 	B.update_emprunt(E1);
 	B.update_emprunt(E2);
 	B.update_emprunt(E3);
+	B.update_emprunt(E4);
+	B.update_emprunt(E5);
+	B.update_emprunt(E6);
 
 	std::cout<<B;
+	std::cout<<""<<std::endl;
 
 	B.livre_auteur(a1);
 	B.livre_emprunt();
