@@ -32,6 +32,7 @@ void Emprunt::updateDate(Date d){
 }
 std::ostream& operator << (std::ostream& os, Emprunt& e){
     os << "Date d'emprunt : " << e.get_Date() << "\n ISBN : " << e.get_ISBN() << "\n id du Lecteur : " << e.get_id();
+    return os;
 }
 bool Emprunt::operator == (const Emprunt& e) const{
 		if(e.get_Date()==_date && e.get_id()==_id && e.get_ISBN()==_ISBN){

@@ -14,6 +14,10 @@ public:
 	void update_liste(std::string ISBN);
 	bool operator == (const Lecteur& L) const;
 	bool operator != (const Lecteur& L) const;
+	bool operator < (const Lecteur& L) const;
+	bool operator <= (const Lecteur& L) const;
+	bool operator > (const Lecteur& L) const;
+	bool operator >= (const Lecteur& L) const;
 	
 
 private:
