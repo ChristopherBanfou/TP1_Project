@@ -138,5 +138,5 @@ bool Bibliotheque::operator != (const Bibliotheque& a) const{
 
 	}
 void Bibliotheque::arrange(){
-	std::sort(_lecteur.begin(),_lecteur.end());
+	std::reverse(_lecteur.begin(),_lecteur.end());
 }

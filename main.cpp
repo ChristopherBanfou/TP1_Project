@@ -98,6 +98,7 @@ int main(int argc, char const *argv[])
 	std::cout << std::endl << B;
 
 	std::cout << "\n \n" << Lec1 << "\n" << Lec2 << "\n" << Lec3 << "\n";
+	std::cout << "\n \n \n \n --------------Après classement des meilleurs lecteurs------------\n \n \n";
 	B.arrange();
 	std::cout << std::endl << B;
 	return 0;
