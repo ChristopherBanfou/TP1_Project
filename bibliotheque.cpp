@@ -165,3 +165,6 @@ bool Bibliotheque::operator != (const Bibliotheque& a) const{
 		return !(a == *this);
 
 	}
+void Bibliotheque::arrange(){
+	std::reverse(_lecteur.begin(),_lecteur.end());
+}

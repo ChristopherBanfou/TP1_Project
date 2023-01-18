@@ -53,12 +53,11 @@ int main(int argc, char const *argv[])
 
 
 	Emprunt E1(d5, L1, Lec1);
-	Emprunt E2(d6, L9, Lec2);
-	Emprunt E3(d6, L8, Lec2);
-	Emprunt E4(d6, L7, Lec2);
-	Emprunt E5(d6, L12, Lec2);
-	Emprunt E6(d6, L4, Lec3);
-
+	Emprunt E6(d5, L7, Lec1);
+	Emprunt E4(d5, L9, Lec3);
+	Emprunt E5(d5, L8, Lec3);
+	Emprunt E2(d6, L2, Lec2);
+	Emprunt E3(d6, L4, Lec3);
 
 	std::vector<Livre> livre;
 	std::vector<Lecteur> lecteur;
@@ -95,11 +94,12 @@ int main(int argc, char const *argv[])
 	B.update_emprunt(E5);
 	B.update_emprunt(E6);
 
-	std::cout<<B;
-	std::cout<<""<<std::endl;
 
-	B.livre_auteur(a1);
-	B.livre_emprunt();
-	B.lecteur_emprunt(Lec2);
+	std::cout << std::endl << B;
+
+	std::cout << "\n \n" << Lec1 << "\n" << Lec2 << "\n" << Lec3 << "\n";
+	std::cout << "\n \n \n \n --------------Après classement des meilleurs lecteurs------------\n \n \n";
+	B.arrange();
+	std::cout << std::endl << B;
 	return 0;
 }

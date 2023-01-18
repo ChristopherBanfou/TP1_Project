@@ -28,22 +28,6 @@ Lecteur::Lecteur(){
 	 void Lecteur::update_liste(std::string ISBN){
 	 	_liste.push_back(ISBN);
 	 }
-
-	void read_lecteur(Lecteur L){
-		std::cout<<"Informations du lecteur : ";
-		std::cout<< "Identifiant : ";
-		std::cout<< L.get_id() << std::endl;
-		std::cout<< "Noms et prenoms : ";
-		std::cout<< L.get_prenom()<< " ";
-		std::cout<< L.get_nom()<<std::endl;
-		std::cout<<"Liste des ISBN des livres empruntes :";
-	for (int i = 0; i < L.get_liste().size(); ++i)
-	{
-		std::cout<< L.get_liste().at(i) << ", ";
-	}
-	std::cout<<" "<<std::endl;
-	std::cout<<" "<<std::endl;
-}
 std::ostream& operator << (std::ostream& os,  Lecteur& L){
 	std::string to_display = "Informations du lecteur : Identifiant : " + L.get_id() + "\n Noms et prenoms : " + L.get_prenom() + " " + L.get_nom() + "\n";
 	to_display = to_display + "Liste des livres empruntés : ";
@@ -64,4 +48,21 @@ std::ostream& operator << (std::ostream& os,  Lecteur& L){
 	bool Lecteur::operator != (const Lecteur& a) const{
 		return !(a == *this);
 
+	}
+	bool Lecteur::operator < (const Lecteur& L) const{
+		if(_liste.size() < L.get_liste().size()){
+		return true;
+		}
+		return false;
+	}
+	bool Lecteur::operator <= (const Lecteur& L) const{
+		if(*this == L) return true;
+		if(*this < L) return true;
+		return false;
+	}
+	bool Lecteur::operator >= (const Lecteur& L) const{
+		return !(*this<L);
+	}
+	bool Lecteur::operator > (const Lecteur& L) const{
+		return !(*this<=L);
 	}

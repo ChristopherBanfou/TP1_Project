@@ -25,6 +25,7 @@ public:
 	void lecteur_emprunt(Lecteur L);
 	bool operator == (const Bibliotheque& e) const;
 	bool operator != (const Bibliotheque& e) const;
+	void arrange();
 private:
 std::vector<Auteur> _auteur;
 std::vector<Livre> _livre;
