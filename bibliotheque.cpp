@@ -23,7 +23,7 @@ std::vector<Emprunt> Bibliotheque::get_emprunt() const{
 }
 
 void Bibliotheque::emprunter(Lecteur &Lec, Livre &L, Date d){
-	if (L.get_status() == false)
+	if (L.get_status() == true)
 	{
 		Emprunt E(d, L, Lec);
 		_emprunt.push_back(E);

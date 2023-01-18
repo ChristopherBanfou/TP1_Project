@@ -93,10 +93,16 @@ int main(int argc, char const *argv[])
 	B.update_emprunt(E4);
 	B.update_emprunt(E5);
 	B.update_emprunt(E6);
+	B.emprunter(Lec3, L3,d6);
+
 
 
 	std::cout << std::endl << B;
 
+	std::cout << "\n \n \n -----------------------Recherche de livres écrits par un auteur-----------------\n";
+	B.livre_auteur(a1);
+	std::cout << "\n \n \n ----------------Liste des livres empruntés-----------\n";
+	B.livre_emprunt();
 	std::cout << "\n \n" << Lec1 << "\n" << Lec2 << "\n" << Lec3 << "\n";
 	std::cout << "\n \n \n \n --------------Après classement des meilleurs lecteurs------------\n \n \n";
 	B.arrange();
