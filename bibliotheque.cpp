@@ -1,6 +1,6 @@
-#pragma once
 #include <iostream>
 #include "bibliotheque.h"
+#include <vector>
 
 Bibliotheque::Bibliotheque(std::vector<Livre> livre, std::vector<Lecteur> lecteur, std::vector<Emprunt> emprunt, std::vector<Auteur> auteur){
 _livre=livre;
@@ -21,6 +21,33 @@ std::vector<Lecteur> Bibliotheque::get_lecteur() const{
 std::vector<Emprunt> Bibliotheque::get_emprunt() const{
 	return _emprunt;
 }
+
+void Bibliotheque::emprunter(Lecteur &Lec, Livre &L, Date d){
+	if (L.get_status() == false)
+	{
+		Emprunt E(d, L, Lec);
+		_emprunt.push_back(E);
+	}
+	else std::cout<<"Le livre n'est pas disponible. "<< std::endl;
+}
+
+
+void Bibliotheque::restituer(Lecteur &Lec, Livre &L) {
+	if (L.get_status() == true)
+	{
+		for (int i = 0; i < _emprunt.size(); ++i)
+		{
+			if (_emprunt.at(i).get_id() == Lec.get_id() && _emprunt.at(i).get_ISBN() == L.get_ISBN())
+			{
+				_emprunt.erase( _emprunt.begin() + i );
+				L.update_status(false);
+			}
+		}
+		
+	}
+	else std::cout<< "Vous ne pouvez pas rendre ce livre car vous ne l'avez pas emprunte"<<std::endl;
+}
+
 
 void Bibliotheque::update_auteur(Auteur A){
 	_auteur.push_back(A);

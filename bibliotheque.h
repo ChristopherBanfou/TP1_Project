@@ -14,6 +14,8 @@ public:
 	std::vector<Lecteur> get_lecteur() const;
 	std::vector<Emprunt> get_emprunt() const;
 	std::vector<Auteur> get_auteur() const;
+	void emprunter(Lecteur &Lec, Livre &L, Date d);
+	void restituer(Lecteur &Lec, Livre &L);
 	void update_livre(Livre L);
 	void update_lecteur(Lecteur Lec);
 	void update_emprunt(Emprunt E);
