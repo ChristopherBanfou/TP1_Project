@@ -2,6 +2,7 @@
 #include "bibliotheque.h"
 #include <vector>
 
+Bibliotheque::Bibliotheque(){};
 Bibliotheque::Bibliotheque(std::vector<Livre> livre, std::vector<Lecteur> lecteur, std::vector<Emprunt> emprunt, std::vector<Auteur> auteur){
 _livre=livre;
 _lecteur=lecteur;

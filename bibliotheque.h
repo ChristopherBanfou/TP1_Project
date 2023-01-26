@@ -9,6 +9,7 @@
 class Bibliotheque
 {
 public:
+	Bibliotheque();
 	Bibliotheque(std::vector<Livre> livre, std::vector<Lecteur> lecteur, std::vector<Emprunt> emprunt, std::vector<Auteur> _auteur);
 	std::vector<Livre> get_livre() const;
 	std::vector<Lecteur> get_lecteur() const;
